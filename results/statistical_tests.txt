@@ -1,0 +1,5 @@
+Comparison: RF-Prop vs LR-Base (F1 across 5 folds)
+Test: Paired t-test
+Statistic: 1.6461
+p-value: 0.1751
+Significant at α=0.05: NO

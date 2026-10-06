@@ -1,30 +1,32 @@
 # Student Academic Performance Prediction
 
-This project is developed for IT41043 – Intelligent Systems (Milestone 2).
+Machine learning study predicting **Low / High academic performance** among Sri Lankan undergraduates using behavioural, workload, and employment features.
 
-## Objective
-To predict whether a Sri Lankan undergraduate student will achieve High or Low academic performance based on workload, study hours, attendance, and part-time employment.
+**Module:** IT41043 - Intelligent Systems, Horizon Campus  
+**Author:** S.W.M.L.M. Samarakoon (ITBIN-2312-0005)
+
+## Research Question
+Does adding engineered behavioural and workload features (workload, assignments, self-study hours, part-time work hours) improve predictive performance over a baseline model using attendance alone?
 
 ## Dataset
-Data is collected via Google Forms survey from Sri Lankan undergraduate students.
+- **Source:** Google Forms survey
+- **Size:** 512 raw responses -> cleaned to ~500 usable rows
+- **Features:** Attendance, Workload, Assignment Frequency, Self-study Hours, Part-time Work Hours
+- **Target:** Label from Current GPA (>=3.0 = High, <3.0 = Low)
 
-## Models
-- Baseline: Logistic Regression
-- Proposed: Random Forest Classifier
+## Models Compared
+| Model | Algorithm | Features |
+|-------|-----------|----------|
+| LR-Base | Logistic Regression | Attendance only |
+| RF-Base | Random Forest | Attendance only |
+| LR-Prop | Logistic Regression | All 5 features |
+| RF-Prop | Random Forest | All 5 features |
 
-## Evaluation
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- ROC-AUC
-- Stratified 5-Fold Cross Validation
-- Statistical significance testing (t-test / Wilcoxon)
+## Results
+See `results/tables/model_comparison.csv`
 
-## Project Structure
-- data/ : Raw and processed datasets
-- src/ : Python scripts for preprocessing and model training
-- requirements.txt : Required Python libraries
-
-## Status
-Milestone 2 – Methodology and initial project setup completed.
+## How to Reproduce
+```bash
+git clone https://github.com/Lishani-Samarakoon/student-academic-performance-prediction.git
+cd student-academic-performance-prediction
+pip install -r requirements.txt
